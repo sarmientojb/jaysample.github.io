@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+}
+
+HEADER{
+background-color: chartreuse;
+}
+
+
+body{
+    text-align: center;
+    background-color: black;
+}
+
+.MAIN{
+    display:flex;
+    margin: 2em auto; /*To review*/
+    gap: 1em;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    anchor-name: --MAIN;
+    scroll-snap-type: x  mandatory;
+    scroll-marker-group: after;
+    
+     }
+
+.MAIN::scroll-button(right) 
+    {
+      content: "→";
+      color: blueviolet;
+      position: fixed;
+      position-anchor: --MAIN;
+      position-area:  right center;
+      translate: -50%;
+   
+    }
+
+.MAIN::scroll-button(left)
+ {
+  content: "←";
+  color: aqua;
+  position: fixed;
+  position-anchor: --MAIN;
+  position-area: left center;
+  translate: 50%;
+
+}
+
+.MAIN::scroll-marker-group /*Tobe cehck and revieew*/
+{
+display: flex;
+justify-content: center;
+gap:1em;
+
+}
+
+.LEFT{
+ scroll-snap-align: start;
+ aspect-ratio: 5/3; /*Tobe cehck and revieew*/
+ flex: 0 0 24em;
+ background-color: blue;
+ width:30%;
+ height:auto;
+}
+
+.SUB_LEFT
+{
+ 
+}
+
+.LEFT::scroll-marker /*Tobe cehck and revieew*/
+{
+ content:'';
+ width: 1em;
+ height: 1em;
+ background-color: pink;
+}
+.LEFT::scroll-marker:target-current  /*Tobe cehck and revieew*/
+{
+background-color: var(--brand--color);  /*Tobe cehck and revieew*/
+}
+
+.MIDDLE{
+aspect-ratio: 5/3; /*Tobe cehck and revieew*/
+scroll-snap-align: start;
+flex: 0 0 24em;
+background-color: aqua;
+
+width:30%;
+ height:auto;
+}
+.MIDDLE::scroll-marker /*Tobe cehck and revieew*/
+{
+ content:'';
+ width: 1em;
+ height: 1em;
+ background-color: aqua;;
+}
+.MIDDLE::scroll-marker:target-current  /*Tobe cehck and revieew*/
+{
+background-color: var(--brand--color);  /*Tobe cehck and revieew*/
+}
+.Background
+{
+ 
+ background-image: url(../WEB_&_CS_IT_FILES/PIC/DJ.jpg);
+ background-size: cover;
+}
+
+.RIGHT{
+  aspect-ratio: 5/3; /*Tobe cehck and revieew*/
+  scroll-snap-align: start;
+flex: 0 0 24em;
+background-color: pink;
+
+}
+.RIGHT::scroll-marker /*Tobe cehck and revieew*/
+{
+   content:'';
+ width: 1em;
+ height: 1em;
+ background-color: rgb(192, 255, 224);
+}
+.RIGHT::scroll-marker:target-current  /*Tobe cehck and revieew*/
+{
+background-color: var(--brand--color);  /*Tobe cehck and revieew*/
+}
+
+
+FOOTER{
+background-color:darksalmon;
+
+}
+
+
+@keyframes spin {    /* to Study */ 
+  from {translate: 0;}
+  to {translate: -100%}
+}
+
+.carousel
+{ 
+Display:flex;
+margin: auto;  /*To check nned to understand*/
+border: 5px solid blue;
+overflow-x: auto;
+width: 95%;
+border-color: aqua;
+
+
+}
+.carousel::-webkit-scrollbar{
+display: none;
+}
+
+.Group
+{
+display: flex;
+align-items: left;
+justify-content: center;
+gap:  1em;
+animation: spin 5s infinite linear;
+padding-right: 1em;
+width: 90%;
+border-color: black;
+}
+
+.card{  
+  height: 5em;
+  flex:0 0 5em;
+  align-items: center;
+  justify-content: center;
+}
+
+img{ 
+  width: 50px;  
+  height: 50px;
+}
+
+
+
+
+@media (max-width: 500px) {
+  .MAIN {
+   flex: 0 0 100%;
+  }
+}
+
+
